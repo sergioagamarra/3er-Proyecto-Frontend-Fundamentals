@@ -1,3 +1,33 @@
+const contactForm = document.getElementById("contact")
+const errorDiv = document.getElementById("error")
+const nameForm = document.getElementById("name")
+const emailForm = document.getElementById("email")
+const mensajeForm = document.getElementById("mensaje")
+
+
+contactForm.onsubmit = function(event){
+    event.preventDefault()
+    console.log(event)
+    const nombre = event.target.nombre.value
+    const email = event.target.email.value
+    const mensaje = event.target.mensaje.value
+
+    
+    if(nombre!="" && email!="" && mensaje!=""){
+        console.log("Datos correctos!")
+        event.target.submit()
+        nameForm.value=""
+        emailForm.value=""
+        mensajeForm.value=""
+    }else{
+        errorDiv.innerHTML=""
+        const p = document.createElement("p")
+        p.innerText = "Datos incorrectos! Favor de verificar"
+        errorDiv.appendChild(p)
+    }
+
+    // Regular expresions
+}
 /*===== MENU SHOW =====*/ 
 const showMenu = (toggleId, navId) =>{
     const toggle = document.getElementById(toggleId),
@@ -54,3 +84,4 @@ sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{});
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+

@@ -9,7 +9,8 @@
   /* HSL color mode */
   --hue-color: 224;
   --first-color: #798f8c;
-  --second-color: #44535e;;
+  --second-color: #44535e;
+  --error-color: rgb(177, 55, 55);
   /*===== Fuente y tipografia =====*/
   --body-font: 'Poppins', sans-serif;
   --big-font-size: 2rem;
@@ -351,20 +352,32 @@ img {
   z-index: var(--z-back);
 }
 
-.skills__html {
-  width: 95%;
+.skills__bar--width-html {
+  width: 50%;
 }
 
-.skills__css {
-  width: 85%;
+.skills__bar--width-css {
+  width: 50%;
 }
 
-.skills__js {
+.skills__bar--width-js {
+  width: 50%;
+}
+
+.skills__bar--width-python {
+  width: 60%;
+}
+
+.skills__bar--width-java {
   width: 65%;
 }
 
-.skills__ux {
-  width: 85%;
+.skills__bar--width-sql {
+  width: 75%;
+}
+
+.skills__bar--width-c {
+  width: 40%;
 }
 
 .skills__img {
@@ -392,6 +405,37 @@ img {
 }
 
 /* ===== CONTACT =====*/
+/* 
+.contact__information { 
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  width: 33%;
+}
+
+.information {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.contact__information i{ 
+  color: var(--first-color);
+  font-size: 40px;
+  margin-right: 10px;
+}
+
+.contact__information .contact__title {
+  color: var(--second-color)
+}
+
+.contact__information .contact__subtitle {
+  color: #7D7D7D;
+  margin: auto;
+} */
+
+
 .contact__input {
   width: 100%;
   font-size: var(--normal-font-size);
@@ -403,6 +447,10 @@ img {
   margin-bottom: var(--mb-4);
 }
 
+.contact__input::placeholder {
+  font-family: var(--body-font);
+}
+
 .contact__button {
   display: block;
   border: none;
@@ -411,7 +459,12 @@ img {
   cursor: pointer;
   margin-left: auto;
 }
-
+.contact__error p{
+  margin-top: 1rem;
+}
+.contact__error p{
+  color: red;
+}
 /* ===== FOOTER =====*/
 .footer {
   background-color: var(--second-color);
@@ -455,6 +508,35 @@ img {
   .home__img {
     width: 200px;
   }
+  
+  .nav__logo {
+    font-size: 15px;
+  }
+
+  .nav__content-logo {
+    width: 2rem;
+  height: 2rem;
+  }
+
+}
+
+@media screen and (min-width: 320px) {
+  .home {
+    row-gap: 2rem;
+  }
+  .home__img {
+    width: 200px;
+  }
+  
+  .nav__logo {
+    font-size: 15px;
+  }
+
+  .nav__content-logo {
+    width: 2rem;
+  height: 2rem;
+  }
+
 }
 
 @media screen and (min-width: 576px) {
@@ -496,6 +578,14 @@ img {
   }
   .contact__container {
     justify-items: center;
+  }
+  .nav__logo {
+    font-size: 20px;
+  }
+
+  .nav__content-logo {
+    width: 2.5rem;
+  height: 2.5rem;
   }
 }
 
@@ -554,6 +644,16 @@ img {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 2rem;
   }
+
+  .nav__logo {
+    font-size: 25px;
+  }
+
+  .nav__content-logo {
+    width: 3.5rem;
+  height: 3.5rem;
+  }
+
 }
 
 @media screen and (min-width: 992px) {
@@ -567,4 +667,12 @@ img {
   .home__img {
     width: 450px;
   }
+  /* .nav__logo {
+    font-size: 10px;
+  }
+
+  .nav__content-logo {
+    width: 1rem;
+  height: 1rem;
+  } */
 }
