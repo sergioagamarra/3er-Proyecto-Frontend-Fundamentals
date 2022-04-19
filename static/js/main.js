@@ -16,14 +16,18 @@ contactForm.onsubmit = function(event){
     if(nombre!="" && email!="" && mensaje!=""){
         console.log("Datos correctos!")
         event.target.submit()
-        nameForm.value=""
-        emailForm.value=""
-        mensajeForm.value=""
+        nameForm.value = ""
+        emailForm.value = ""
+        mensajeForm.value = ""
     }else{
         errorDiv.innerHTML=""
         const p = document.createElement("p")
         p.innerText = "Datos incorrectos! Favor de verificar"
         errorDiv.appendChild(p)
+        setTimeout(function(){
+            errorDiv.innerHTML = ""
+        }, 5000);
+
     }
 
     // Regular expresions
@@ -75,7 +79,7 @@ window.addEventListener('scroll', scrollActive)
 const sr = ScrollReveal({
     origin: 'top',
     distance: '60px',
-    duration: 2000,
+    duration: 1500,
     delay: 200,
 //     reset: true
 });
@@ -83,5 +87,5 @@ const sr = ScrollReveal({
 sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{}); 
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
-sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+sr.reveal('.skills__data, .work__img, .contact__input, .information, .work__container',{interval: 200}); 
 
